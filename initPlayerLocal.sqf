@@ -11,7 +11,7 @@ waitUntil {!isNull player};
 if (!hasInterface || isDedicated) exitWith {};
 
 // Lives saving in missionNamespace
-private _lifeplayerid = missionNamespace getVariable name player; // looking for value in missionNamespace specific to player name
+private _lifeplayerid = missionNamespace getVariable name player; // looking for value in missionNamespace for that player
 
 if (isNil "_lifeplayerid") then { // if undefined then it's a first login
 	_chosen = paramsArray select 0;
@@ -31,6 +31,7 @@ if (isNil "_lifeplayerid") then { // if undefined then it's a first login
 player setVariable ["RCC_forcespectate", false, true];
 player setVariable ["RCC_IsSpectator", false];
 
+// Init Spectator Watch CBA FrameEventhandler
 RCC_CBASpectateWatch = [
 	{
 		// player run out of tickets OR is force spectator AND is not already in spectator
@@ -57,12 +58,3 @@ RCC_CBASpectateWatch = [
 
 // Call the script to init safestart/safezone client side
 execVM "functions\fn_safestart_client.sqf";
-
-// Call the script to create diary entries
-//execVM "scripts\diary.sqf";
-
-// Call the script to init joinCam
-//execVM "scripts\joinCam.sqf";
-
-// switch off GOKO_BI
-// profileNamespace setVariable ["gokobi_var_onoffswitch", false];
