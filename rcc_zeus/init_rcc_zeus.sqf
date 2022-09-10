@@ -44,10 +44,6 @@ if !(_hasZen) exitWith { systemChat "ZEN not detected";};
 ["1er RCC Tools", "Group Cap Reset", {execVM "rcc_zeus\rcc_zeus_unitcap.sqf";}, "\a3\ui_f\data\igui\cfg\simpletasks\types\use_ca.paa"] call zen_custom_modules_fnc_register;
 ["1er RCC Tools", "Toggle Consciousness", {_this execVM "rcc_zeus\rcc_zeus_toggleconsciousness.sqf";}, "\z\ace\addons\zeus\UI\Icon_Module_Zeus_Unconscious_ca.paa"] call zen_custom_modules_fnc_register;
 
-// module in dev, need complete validation
-// ["1er RCC Dev", "Cam Zoom-In", {_this execVM "rcc_dev\rcc_zeus_camzoomin.sqf";}, "\a3\Modules_F_Curator\Data\portraitCuratorSetCamera_ca.paa"] call zen_custom_modules_fnc_register;
-// ["1er RCC Dev", "Create Safezone", {_this execVM "rcc_dev\rcc_zeus_safezone.sqf";}] call zen_custom_modules_fnc_register;
-
 
 // Custom Right-Click Actions
 
