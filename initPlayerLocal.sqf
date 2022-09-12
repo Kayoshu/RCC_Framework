@@ -31,6 +31,9 @@ if (isNil "_lifeplayerid") then { // if undefined then it's a first login
 player setVariable ["RCC_forcespectate", false, true];
 player setVariable ["RCC_IsSpectator", false];
 
+RCC_CrowsZAModLoaded = isClass (configFile >> "CfgPatches" >> "CrowsZA"); // CrowsZA locally loaded
+RCC_ACEModLoaded = isClass (configFile >> "CfgPatches" >> "ace_main"); // ACE locally loaded
+
 // Init Spectator Watch CBA FrameEventhandler
 RCC_CBASpectateWatch = [
 	{
@@ -40,7 +43,11 @@ RCC_CBASpectateWatch = [
 			["close"] call BIS_fnc_showRespawnMenu;
 			[true, true, true] call ace_spectator_fnc_setSpectator;
 			player setVariable ["RCC_IsSpectator", true];
-			["ace_captives_setHandcuffed", [player, true], player] call CBA_fnc_targetEvent;
+			if (RCC_ACEModLoaded) then {
+				["ace_captives_setHandcuffed", [player, true], player] call CBA_fnc_targetEvent;	
+			} else {
+				player setCaptive true;
+			};
 	
 			private _players = [] call CBA_fnc_players;
 			private _spec = [] call ace_spectator_fnc_players;
@@ -53,7 +60,11 @@ RCC_CBASpectateWatch = [
 				[false, true, true] call ace_spectator_fnc_setSpectator;
 				player setVariable ["RCC_IsSpectator", false];
 				sleep 1;
-				["ace_captives_setHandcuffed", [player, false], player] call CBA_fnc_targetEvent;
+				if (RCC_ACEModLoaded) then {
+					["ace_captives_setHandcuffed", [player, false], player] call CBA_fnc_targetEvent;	
+				} else {
+					player setCaptive false;
+				};
 			};		
 		};
 	}, 3
