@@ -40,6 +40,7 @@ RCC_CBASpectateWatch = [
 			["close"] call BIS_fnc_showRespawnMenu;
 			[true, true, true] call ace_spectator_fnc_setSpectator;
 			player setVariable ["RCC_IsSpectator", true];
+			["ace_captives_setHandcuffed", [player, true], player] call CBA_fnc_targetEvent;
 	
 			private _players = [] call CBA_fnc_players;
 			private _spec = [] call ace_spectator_fnc_players;
@@ -51,6 +52,8 @@ RCC_CBASpectateWatch = [
 			if ([player, nil, true] call BIS_fnc_respawnTickets > 0 && !(player getVariable "RCC_forcespectate") && player getVariable "RCC_IsSpectator") then {
 				[false, true, true] call ace_spectator_fnc_setSpectator;
 				player setVariable ["RCC_IsSpectator", false];
+				sleep 1;
+				["ace_captives_setHandcuffed", [player, false], player] call CBA_fnc_targetEvent;
 			};		
 		};
 	}, 3
