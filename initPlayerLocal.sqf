@@ -44,8 +44,10 @@ RCC_ACEModLoaded = isClass (configFile >> "CfgPatches" >> "ace_main"); // ACE lo
 RCC_CBASpectateWatch = [
 	{
 		// player run out of tickets OR is force spectator AND is not already in spectator
-		if ([player, nil, true] call BIS_fnc_respawnTickets < 1 OR player getVariable "RCC_forcespectate" && !(player getVariable "RCC_IsSpectator")) then {
+		if (([player, nil, true] call BIS_fnc_respawnTickets < 1 OR player getVariable "RCC_forcespectate") && !(player getVariable "RCC_IsSpectator")) then {
+			// possible fix for issue #2
 			systemChat "Going into Spectator";
+			systemChat "DEBUG";
 			["close"] call BIS_fnc_showRespawnMenu;
 			[true, true, true] call ace_spectator_fnc_setSpectator;
 			player setVariable ["RCC_IsSpectator", true];
@@ -65,6 +67,7 @@ RCC_CBASpectateWatch = [
 			if ([player, nil, true] call BIS_fnc_respawnTickets > 0 && !(player getVariable "RCC_forcespectate") && player getVariable "RCC_IsSpectator") then {
 				[false, true, true] call ace_spectator_fnc_setSpectator;
 				player setVariable ["RCC_IsSpectator", false];
+				systemChat "DEBUG: Going back into life";
 				sleep 1;
 				if (RCC_ACEModLoaded) then {
 					["ace_captives_setHandcuffed", [player, false], player] call CBA_fnc_targetEvent;	
