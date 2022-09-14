@@ -27,10 +27,14 @@ private _onConfirm = {
 		
 		if (_lifeplayerid > 0) then { // only cycle through positive players, -1 might be logging atm or out of the ticket system if logout to lobby
 		
+			private _plyUID = getPlayerUID _x;
 			private _varlives = (round _livestoset) - _lifeplayerid; // calculate total to modify tickets
 			[_x, _varlives] call BIS_fnc_respawnTickets; // set tickets
-			missionNamespace setVariable [name _x, round _livestoset, true]; // sync in namespace variable	
+			missionNamespace setVariable ["RCCLives" + _plyUID, round _livestoset, true]; // sync in namespace variable
+			//missionNamespace setVariable [name _x, round _livestoset, true]; // sync in namespace variable	
 			
+			systemChat format["DEBUG %2: Set %1", round _livestoset, "RCCLives" + _plyUID];
+
 			if (_notify) then {
 				["zen_common_hint", [format["Zeus has set everyone to %1 lives", round _livestoset]], _x] call CBA_fnc_targetEvent; // if notify checkbox inform player
 			};

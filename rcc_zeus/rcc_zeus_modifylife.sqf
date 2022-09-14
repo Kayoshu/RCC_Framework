@@ -20,17 +20,17 @@ private _onConfirm = {
 	params ["_dialogResult", "_unit"];
 	_dialogResult params ["_lifes"];
 	
-	//Get in params again
-	//_in params ["_unit"];
-	
 	private _lifeplayerid = [_unit, nil, true] call BIS_fnc_respawnTickets; // selected player current lives
+	private _plyUID = getPlayerUID _unit;
 	private _oldlives = round _lifes; // store total lives after modify
 	private _lifes = round _lifes - _lifeplayerid; // calculate difference for tickets change
 
 	[_unit, _lifes] call BIS_fnc_respawnTickets; // modify selected player tickets
-	missionNamespace setVariable [name _unit, _oldlives, true]; // set namespace to total
+	missionNamespace setVariable ["RCCLives" + _plyUID, _oldlives, true]; // sync in namespace variable
+	//missionNamespace setVariable [name _unit, _oldlives, true]; // set namespace to total
 
-	systemChat format["%2: %1 vies", _oldlives, name _unit];
+	systemChat format["DEBUG %2: %1 vies", _oldlives, "RCCLives" + _plyUID];
+	//systemChat format["%2: %1 vies", _oldlives, name _unit];
 };
 
 
