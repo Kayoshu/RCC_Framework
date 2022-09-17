@@ -29,4 +29,4 @@ if (!alive _unit) exitWith {
 	playSound "FD_Start_F";
 };
 
-["zen_common_execute", [ace_medical_status_fnc_setUnconsciousState, [_unit, !(_unit getVariable ["ACE_isUnconscious", false])]], _unit] call CBA_fnc_targetEvent;
+["zen_common_execute", [ace_medical_fnc_setUnconscious, [_unit, !(_unit getVariable ["ACE_isUnconscious", false])]], _unit] call CBA_fnc_targetEvent;

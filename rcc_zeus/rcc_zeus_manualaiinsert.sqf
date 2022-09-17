@@ -70,4 +70,4 @@ _objectModule addAction ["Le dismount !", {
 	}
 
 	// _calledUnits joinSilent (group _unitCalled); // needed if we want the group to have waypoint again
-}, nil, 1.5, true, true, "", "(!isNull (getAssignedCuratorLogic player))", 5, false, "", ""];
+}, nil, 1.5, true, true, "", "(!isNull (getAssignedCuratorLogic player))", 15, false, "", ""];

@@ -24,4 +24,7 @@ if (_unlimtemplate) then {
 
 // synchro to namespace
 private _lifeplayerid = [player, nil, true] call BIS_fnc_respawnTickets; // get current lives after death
-missionNamespace setVariable [name player, _lifeplayerid, true]; // sync in namespace variable
+private _plyUID = getPlayerUID player;
+missionNamespace setVariable ["RCCLives" + _plyUID, _lifeplayerid, true]; // sync in namespace variable
+//missionNamespace setVariable [name player, _lifeplayerid, true]; // sync in namespace variable
+systemChat format["Respawn %2: %1 lives", _lifeplayerid, "RCCLives" + _plyUID];
