@@ -6,10 +6,17 @@
 
 
 // define if unlimited template selected at lobby
-if (paramsArray select 0 == 10) then {
+if (paramsArray select 1 == 1) then {
 	missionNamespace setVariable ["RCC_TplLivesUnlimited", true, true];
 } else {
 	missionNamespace setVariable ["RCC_TplLivesUnlimited", false, true];
+};
+
+// define if mission safestart selected at lobby
+if (paramsArray select 2 == 1) then {
+	missionNamespace setVariable ["RCC_SafeStart", true, true];
+} else {
+	missionNamespace setVariable ["RCC_SafeStart", false, true];
 };
 
 
@@ -28,4 +35,3 @@ if (paramsArray select 0 == 10) then {
 // mission variables for zeus modules
 // missionNamespace setVariable ["CountSound", 1, true]; // init count for sound box module
 missionNamespace setVariable ["RCC_CustomEndLock", false, true]; // init variable to lock custom end editing in multizeus
-missionNamespace setVariable ["RCC_SafeStart", false, true]; // init variable for safestart at spawn

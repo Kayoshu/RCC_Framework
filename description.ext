@@ -23,9 +23,23 @@ class Params
 	class plylives
 	{
 		title = "Lives";
-		texts[] = {"1 vie","3 vies","5 vies","Unlimited lives"}; // le choix "unlimited" correspond à 10 vies qui ne sont pas décrémentées
-		values[] = {1,3,5,10};
+		texts[] = {"1 vie","3 vies","5 vies","10 vies","100 vies"};
+		values[] = {1,3,5,10,100};
 		default = 3;
+	};
+	class unlimlives
+	{
+		title = "Lives Unlimited";
+		texts[] = {"NO","YES"};
+		values[] = {0,1};
+		default = 0;
+	};
+	class missionsafestart
+	{
+		title = "Mission in Safestart";
+		texts[] = {"NO","YES"};
+		values[] = {0,1};
+		default = 0;
 	};
 };
 
