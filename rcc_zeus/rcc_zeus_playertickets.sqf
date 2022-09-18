@@ -49,9 +49,9 @@ private _onConfirm = {
 		if (_lifeplayerid != _newlives) then { // only modify player when numbers differs
 		
 			private _plyUID = getPlayerUID (_dynamicPlayerarray#_i);
-			private _lifes = _newlives - _lifeplayerid; // calculate difference for tickets change
+			private _lifetoadd = _newlives - _lifeplayerid; // calculate difference for tickets change
 
-			[(_dynamicPlayerarray#_i), _lifes] call BIS_fnc_respawnTickets; // modify player tickets
+			[(_dynamicPlayerarray#_i), _lifetoadd] call BIS_fnc_respawnTickets; // modify player tickets
 			missionNamespace setVariable ["RCCLives" + _plyUID, _newlives, true]; // sync in namespace variable
 
 			_infomodified = _infomodified + format["%2: %1 vies - ", _newlives, name (_dynamicPlayerarray#_i)]; // add name for zeus display
