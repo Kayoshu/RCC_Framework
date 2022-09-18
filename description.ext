@@ -1,20 +1,9 @@
-// Type de respawn BASE, obligatoire pour le système de tickets
+respawn = 3; // Type de respawn BASE, obligatoire pour le système de tickets
 // Important de mettre au minimum 1 point de respawn "debug", soit un module Eden, soit un marker avec la side: respawn_west, respawn_east, respawn_guerrila, respawn_civilian
-//
-respawn = 3;
 
-// 0: Pas de respawn au start, chaque joueur arrive dans son slot, moins de bug de collisions
-// 1: choix du point de spawn au start
-//
-respawnOnStart = 0;
-
-// Delai de respawn
-//
-respawnDelay = 10;
-
-// Templates: Retirer les tickets à la mort et Choix du point de spawn
-//
-respawnTemplates[] = {"Tickets","MenuPosition"};
+respawnOnStart = 0; // 0: Pas de respawn au start, chaque joueur arrive dans son slot, moins de bug de collisions
+respawnDelay = 20; // Delai de respawn
+respawnTemplates[] = {"Tickets","MenuPosition"}; // Templates: Retirer les tickets à la mort et Choix du point de spawn
 
 // Mission parameters at lobby (nombre des vies)
 //
