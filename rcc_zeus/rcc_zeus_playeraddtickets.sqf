@@ -31,9 +31,6 @@ private _onConfirm = {
 			private _varlives = round _livestoadd + _lifeplayerid; // calculate total to store in namespace
 			[_x, round _livestoadd] call BIS_fnc_respawnTickets; // set tickets
 			missionNamespace setVariable ["RCCLives" + _plyUID, _varlives, true]; // sync in namespace variable
-			// missionNamespace setVariable [name _x, _varlives, true]; // sync in namespace variable		
-			
-			systemChat format["DEBUG %2: %1 Added", round _livestoadd, "RCCLives" + _plyUID];
 
 			if (_notify) then {
 				["zen_common_hint", [format["Zeus has added %1 lives to everyone", round _livestoadd]], _x] call CBA_fnc_targetEvent; // if notify checkbox inform player

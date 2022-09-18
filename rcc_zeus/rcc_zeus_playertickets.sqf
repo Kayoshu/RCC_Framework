@@ -53,10 +53,8 @@ private _onConfirm = {
 
 			[(_dynamicPlayerarray#_i), _lifes] call BIS_fnc_respawnTickets; // modify player tickets
 			missionNamespace setVariable ["RCCLives" + _plyUID, _oldlives, true]; // sync in namespace variable
-			//missionNamespace setVariable [name (_dynamicPlayerarray#_i), _oldlives, true]; // sync in namespace variable
 
-			_infomodified = _infomodified + format["DEBUG %2: %1 vies - ", _oldlives, "RCCLives" + _plyUID]; // add name for zeus display
-			//_infomodified = _infomodified + format["%2: %1 vies - ", _oldlives, name (_dynamicPlayerarray#_i)]; // add name for zeus display
+			_infomodified = _infomodified + format["%2: %1 vies - ", _oldlives, name (_dynamicPlayerarray#_i)]; // add name for zeus display
 			
 			if (_dialogResult#0) then {
 				["zen_common_hint", [format["Zeus modified: %1 lives", _oldlives]], (_dynamicPlayerarray#_i)] call CBA_fnc_targetEvent; // if notify checkbox inform player

@@ -27,10 +27,8 @@ private _onConfirm = {
 
 	[_unit, _lifes] call BIS_fnc_respawnTickets; // modify selected player tickets
 	missionNamespace setVariable ["RCCLives" + _plyUID, _oldlives, true]; // sync in namespace variable
-	//missionNamespace setVariable [name _unit, _oldlives, true]; // set namespace to total
 
-	systemChat format["DEBUG %2: %1 vies", _oldlives, "RCCLives" + _plyUID];
-	//systemChat format["%2: %1 vies", _oldlives, name _unit];
+	systemChat format["%3 %2: %1 vies", _oldlives, _plyUID, name _unit];
 };
 
 

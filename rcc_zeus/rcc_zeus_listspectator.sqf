@@ -56,9 +56,6 @@ private _onConfirm = {
 				private _plyUID = getPlayerUID (_dynamicPlayerarray#_i);
 				private _lifeplayerid = [(_dynamicPlayerarray#_i), nil, true] call BIS_fnc_respawnTickets; // safety get value again
 				missionNamespace setVariable ["RCCLives" + _plyUID, _lifeplayerid, true]; // sync in namespace variable
-				//missionNamespace setVariable [name (_dynamicPlayerarray#_i), _lifeplayerid, true]; // sync in namespace variable
-				
-				systemChat format["DEBUG %1: Out of Spec", "RCCLives" + _plyUID];
 
 				_infomodified = _infomodified + format["%1 - ", name (_dynamicPlayerarray#_i)]; // add name for zeus display
 				["zen_common_hint", ["Zeus gave you 1 life"], (_dynamicPlayerarray#_i)] call CBA_fnc_targetEvent; // inform player
