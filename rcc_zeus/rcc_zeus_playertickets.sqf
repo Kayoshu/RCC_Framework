@@ -44,20 +44,20 @@ private _onConfirm = {
 	for "_i" from 0 to (count _dynamicPlayerarray -1) step 1 do { 
 	
 		private _lifeplayerid = [(_dynamicPlayerarray#_i), nil, true] call BIS_fnc_respawnTickets; // current player lives
-		private _oldlives = round (_dialogResult#(_i+1)); // store lives after modify
+		private _newlives = round (_dialogResult#(_i+1)); // store lives after modify
 		
-		if (_lifeplayerid != _oldlives) then { // only modify player when numbers differs
+		if (_lifeplayerid != _newlives) then { // only modify player when numbers differs
 		
 			private _plyUID = getPlayerUID (_dynamicPlayerarray#_i);
-			private _lifes = round (_dialogResult#(_i+1)) - _lifeplayerid; // calculate difference for tickets change
+			private _lifes = _newlives - _lifeplayerid; // calculate difference for tickets change
 
 			[(_dynamicPlayerarray#_i), _lifes] call BIS_fnc_respawnTickets; // modify player tickets
-			missionNamespace setVariable ["RCCLives" + _plyUID, _oldlives, true]; // sync in namespace variable
+			missionNamespace setVariable ["RCCLives" + _plyUID, _newlives, true]; // sync in namespace variable
 
-			_infomodified = _infomodified + format["%2: %1 vies - ", _oldlives, name (_dynamicPlayerarray#_i)]; // add name for zeus display
+			_infomodified = _infomodified + format["%2: %1 vies - ", _newlives, name (_dynamicPlayerarray#_i)]; // add name for zeus display
 			
 			if (_dialogResult#0) then {
-				["zen_common_hint", [format["Zeus modified: %1 lives", _oldlives]], (_dynamicPlayerarray#_i)] call CBA_fnc_targetEvent; // if notify checkbox inform player
+				["zen_common_hint", [format["Zeus modified: %1 lives", _newlives]], (_dynamicPlayerarray#_i)] call CBA_fnc_targetEvent; // if notify checkbox inform player
 			};
 		};
 
