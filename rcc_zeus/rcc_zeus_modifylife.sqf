@@ -22,13 +22,13 @@ private _onConfirm = {
 	
 	private _lifeplayerid = [_unit, nil, true] call BIS_fnc_respawnTickets; // selected player current lives
 	private _plyUID = getPlayerUID _unit;
-	private _oldlives = round _lifes; // store total lives after modify
-	private _lifes = round _lifes - _lifeplayerid; // calculate difference for tickets change
+	private _newlives = round _lifes; // store total lives after modify
+	private _lifes = _newlives - _lifeplayerid; // calculate difference for tickets change
 
 	[_unit, _lifes] call BIS_fnc_respawnTickets; // modify selected player tickets
-	missionNamespace setVariable ["RCCLives" + _plyUID, _oldlives, true]; // sync in namespace variable
+	missionNamespace setVariable ["RCCLives" + _plyUID, _newlives, true]; // sync in namespace variable
 
-	systemChat format["%3 %2: %1 vies", _oldlives, _plyUID, name _unit];
+	systemChat format["%3 %2: %1 vies", _newlives, _plyUID, name _unit];
 };
 
 
