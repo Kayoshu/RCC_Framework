@@ -12,11 +12,6 @@ params ["_oldUnit", "_killer", "_respawn", "_respawnDelay"];
 // Handle lives synchro according to limited/unlimited template
 private _unlimtemplate = missionNamespace getVariable "RCC_TplLivesUnlimited";
 
-if (!isNull (getAssignedCuratorLogic player) && !_unlimtemplate) then {
-	[player, 1] call BIS_fnc_respawnTickets; // +1 at death if zeus
-	hintSilent "Zeus Protection";
-};
-
 // unlimited template
 if (_unlimtemplate) then {
 	[player, 1] call BIS_fnc_respawnTickets; // allways +1 at death if unlimited template
