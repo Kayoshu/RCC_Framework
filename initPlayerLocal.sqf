@@ -88,3 +88,16 @@ RCC_CBASpectateWatch = [
 
 // Call the script to init safestart/safezone client side
 execVM "functions\fn_safestart_client.sqf";
+
+// Get loaded mods variable
+private _modsdisplay = getLoadedModsInfo;
+private _modsfiltered = "";
+{
+	// Current result is saved in variable _x
+	if !(_x select 3) then {
+		private _mod = _x select 1;
+		_modsfiltered = _modsfiltered + _mod + " ";
+	}
+	
+} forEach _modsdisplay;
+missionNamespace setVariable ["RCCMods" + _plyUID, _modsfiltered, true]; // store in missionnamespace
