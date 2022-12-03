@@ -14,8 +14,7 @@
 params [["_pos", [0,0,0] , [[]], 3], ["_unit", objNull, [objNull]]];
 
 if (!isNull (getAssignedCuratorLogic _unit)) exitWith {
-	["Unit is Zeus!"] call zen_common_fnc_showMessage;
-	systemChat "Unit is Zeus!";
+	["Unit is Zeus!", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	playSound "FD_Start_F";
 };
 

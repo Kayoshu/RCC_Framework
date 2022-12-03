@@ -14,14 +14,12 @@
 params [["_pos", [0,0,0] , [[]], 3], ["_object", objNull, [objNull]]];
 
 if (isNull _object) exitWith {
-	 ["Select an object"] call zen_common_fnc_showMessage;
-	 systemChat "Select an object";
+	["Select an object", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	 playSound "FD_Start_F";
 };
 
 if (isPlayer _object) exitWith {
-	["You can't delete players"] call zen_common_fnc_showMessage;
-	systemChat "You can't delete players";
+	["You cannot delete players", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	playSound "FD_Start_F";
 };
 
@@ -33,5 +31,4 @@ if (!isNil {crew _object}) then {
 
 deleteVehicle _object;
 
-["Deleted %1", getText (configOf _object >> "displayName")] call zen_common_fnc_showMessage;
 systemChat format["Deleted %1", getText (configOf _object >> "displayName")];

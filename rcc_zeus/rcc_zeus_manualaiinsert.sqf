@@ -17,8 +17,7 @@
 params [["_pos", [0,0,0] , [[]], 3], ["_objectModule", objNull, [objNull]]];
 
 if (!(_objectModule isKindOf "Helicopter")) exitWith {
-	["Vehicle needs to be an helicopter"] call zen_common_fnc_showMessage;
-	systemChat "Vehicle needs to be an helicopter";
+	["Vehicle needs to be an helicopter", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	playSound "FD_Start_F";
 };
 

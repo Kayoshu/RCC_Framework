@@ -17,8 +17,7 @@ private _onConfirm = {
 	_dialogResult params ["_text1", "_timing1", "_dummy1", "_datechange", "_day", "_month", "_hours", "_minutes", "_show", "_text2", "_timing2"];
 
 	if (_text1 == "" && _text2 == "" && _datechange == false) exitWith {
-        ["Need at least 1 text or date change"] call zen_common_fnc_showMessage;
-		systemChat "Need at least 1 text or date change";
+		["Need at least 1 text or date change", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
         playSound "FD_Start_F";
 	};
 	

@@ -40,9 +40,8 @@ private _allSquadMembers = units group _hoveredEntity;
 _allSquadMembers deleteAt (_allSquadMembers find _hoveredEntity); // Remove _hoveredEntity from the list
 
 if (count _allSquadMembers == 0) exitWith {
-	 ["Player is alone in squad"] call zen_common_fnc_showMessage;
-	 systemChat "Player is alone in squad";
-	 playSound "FD_Start_F";
+	["Player is alone in squad", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
+	playSound "FD_Start_F";
 };
 
 // Get pretty names array

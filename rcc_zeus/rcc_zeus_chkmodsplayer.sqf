@@ -16,8 +16,7 @@ params [["_pos", [0,0,0] , [[]], 3], ["_unit", objNull, [objNull]]];
 
 //if is  not player, exit
 if (isNull _unit || !(isPlayer _unit)) exitWith {
-	["Select a player"] call zen_common_fnc_showMessage;
-	systemChat "Select a player";
+	["Select a player", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	playSound "FD_Start_F";
 };
 

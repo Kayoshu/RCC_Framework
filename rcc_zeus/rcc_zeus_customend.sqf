@@ -53,8 +53,7 @@ private _onConfirm = {
 	_dialogResult params ["_text1", "_timing1", "_text2", "_timing2", "_text3", "_timing3", "_text4", "_timing4", "_text5", "_timing5", "_dummy", "_failed", "_fadetime", "_fadecolor", "_invincible"];
 
 	if (_text1 == "" && _text2 == "" && _text3 == "" && _text4 == "" && _text5 == "") exitWith {
-        ["All Text Empty"] call zen_common_fnc_showMessage;
-		systemChat "All Text Empty";
+		["All Text Empty", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
         playSound "FD_Start_F";
 	};
 	
@@ -72,6 +71,7 @@ private _onConfirm = {
 
 	private _allPlayers = call CBA_fnc_players;
 	if (_invincible) then { // apply invincibility
+		systemChat "Invincibility ON";
 		{
 			["zen_common_allowDamage", [_x, false], _x] call CBA_fnc_targetEvent;
 			if (!isNull objectParent _x) then {

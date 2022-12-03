@@ -16,13 +16,12 @@ private _onConfirm = {
 	_dialogResult params ["_text1", "_timing1", "_text2", "_timing2", "_text3", "_timing3", "_text4", "_timing4", "_side", "_persidetext"];
 
 	if (_text1 == "" && _text2 == "" && _text3 == "" && _text4 == "") exitWith {
-        ["Need at least 1 text"] call zen_common_fnc_showMessage;
-		systemChat "Need at least 1 text";
+		["Need at least 1 text", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
         playSound "FD_Start_F";
 	};
 	
 	if (_persidetext) then {
-		systemChat format["Sent to side: %1", _side];
+		[format["Sent to side: %1", _side], -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	};
 	
 	// spawn texts
@@ -63,7 +62,7 @@ private _onConfirm = {
 
 // Module dialog 
 [
-	"Transition Time Change", 
+	"Transition Texts", 
 	[
 		["EDIT:MULTI", "Text 1", ["", nil, 4], false],
 		["SLIDER", "Timer Text 1", [2, 20, 5, 0], false],

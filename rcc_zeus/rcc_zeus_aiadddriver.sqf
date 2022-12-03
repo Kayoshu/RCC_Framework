@@ -16,16 +16,14 @@ params [["_pos", [0,0,0] , [[]], 3], ["_tgtVhl", objNull, [objNull]]];
 
 // if param is empty or Man unit, exit
 if (isNull _tgtVhl || !(_tgtVhl isKindOf "LandVehicle")) exitWith {
-	["Need a land vehicle"] call zen_common_fnc_showMessage;
-	systemChat "Need a land vehicle";
+	["Need a land vehicle", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	playSound "FD_Start_F";
 };
 
 private _localaction = _tgtVhl getVariable "RCC_autopilot";
 
 if !(isNil "_localaction") exitWith {
-	["Vehicle already with autopilot"] call zen_common_fnc_showMessage;
-	systemChat "Vehicle already with autopilot";
+	["Vehicle already with autopilot", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	playSound "FD_Start_F";
 };
 
