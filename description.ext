@@ -32,3 +32,7 @@ class Params
 	};
 };
 
+class CfgSounds
+{
+	#include "sound\initALsnowstorm.hpp"			// Sound AL Snowstorm
+};

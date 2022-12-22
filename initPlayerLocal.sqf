@@ -101,3 +101,6 @@ private _modsfiltered = "";
 	
 } forEach _modsdisplay;
 missionNamespace setVariable ["RCCMods" + _plyUID, _modsfiltered, true]; // store in missionnamespace
+
+// Call the script to init JIP snowstorm
+execVM "rcc_zeus\AL_snowstorm\fn_initSnowstormJIP.sqf";

@@ -19,3 +19,6 @@ if !(_hasZen) exitWith { systemChat "ZEN not detected";};
 // AL fog
 ["1er RCC Environment", "Fog Low", {_this execVM "rcc_zeus\rcc_zeus_AL_lowfog.sqf";}, "\a3\Modules_F_Curator\Data\portraitSmoke_ca.paa"] call zen_custom_modules_fnc_register;
 ["1er RCC Environment", "Fog Ring", {_this execVM "rcc_zeus\rcc_zeus_AL_ringfog.sqf";}, "\a3\Modules_F_Curator\Data\iconSmoke_ca.paa"] call zen_custom_modules_fnc_register;
+
+// AL Snowstorm RCC Rework
+["1er RCC Environment", "Snowstorm & Vanilla Fog", {execVM "rcc_zeus\rcc_zeus_AL_snowstorm.sqf";}, "\a3\Modules_F_Curator\Data\portraitWeather_ca.paa"] call zen_custom_modules_fnc_register;
