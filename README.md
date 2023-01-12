@@ -50,8 +50,7 @@ Actions au clic droit sur joueur:
 Actions au clic droit sur IA:
 * Supressive Fire (dev Reeveli - SPG) -> nouveau supressive fire avec module cible (la supression suit la cible), gestion du range d'engagement des unités, les véhicules utilisent tous leurs armements (MG+Canon), munition non décomptées sur l'IA
   L'action est plus facile d'accès avec la touche "V" plutôt que le clic-droit, notamment sur les véhicles
-  explications détaillées en video
-![video](https://youtu.be/JEYg0frZupA?t=675)
+  explications détaillées en video https://youtu.be/JEYg0frZupA?t=675
 
 
 Raccourci clavier pour Zeus:
