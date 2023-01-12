@@ -48,9 +48,7 @@ Actions au clic droit sur joueur:
 
 
 Actions au clic droit sur IA:
-* Supressive Fire (dev Reeveli - SPG) -> nouveau supressive fire avec module cible (la supression suit la cible), gestion du range d'engagement des unités, les véhicules utilisent tous leurs armements (MG+Canon), munition non décomptées sur l'IA
-  L'action est plus facile d'accès avec la touche "V" plutôt que le clic-droit, notamment sur les véhicles
-  explications détaillées en video https://youtu.be/JEYg0frZupA?t=675
+* Supressive Fire (dev Reeveli - SPG) -> nouveau supressive fire avec module cible (la supression suit la cible), gestion du range d'engagement des unités, les véhicules utilisent tous leurs armements (MG+Canon), munition non décomptées sur l'IA. L'action est plus facile d'accès avec la touche "V" plutôt que le clic-droit, notamment sur les véhicles. Explications détaillées en video https://youtu.be/JEYg0frZupA?t=675
 
 
 Raccourci clavier pour Zeus:
@@ -58,5 +56,4 @@ Raccourci clavier pour Zeus:
 
 
 Self-Interaction pour les joueurs:
-* Remove foliage -> Nécessite l'entrenching tool dans l'inventaire et permet à un joueur PRONE de couper l'herbe autour de lui.
- L'objet est affiché en zeus pour pouvoir les supprimer plus tard dans la mission si besoin
+* Remove foliage -> Nécessite l'entrenching tool dans l'inventaire et permet à un joueur PRONE de couper l'herbe autour de lui. L'objet est affiché en zeus pour pouvoir les supprimer plus tard dans la mission si besoin
