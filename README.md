@@ -45,3 +45,19 @@ Actions au clic droit sur joueur:
 * Modifiy lives -> comme le module permet de modifier les vies sur un joueur individuel 
 
 ![image](https://user-images.githubusercontent.com/113190714/190918435-ab843c58-38a4-4702-8439-e64e4b241740.png)
+
+
+Actions au clic droit sur IA:
+* Supressive Fire (dev Reeveli - SPG) -> nouveau supressive fire avec module cible (la supression suit la cible), gestion du range d'engagement des unités, les véhicules utilisent tous leurs armements (MG+Canon), munition non décomptées sur l'IA
+  L'action est plus facile d'accès avec la touche "V" plutôt que le clic-droit, notamment sur les véhicles
+  explications détaillées en video
+![video](https://youtu.be/JEYg0frZupA?t=675)
+
+
+Raccourci clavier pour Zeus:
+* INSERT permet de basculer l'écoute Zeus (TFAR) entre la position réelle ou la position de la caméra (touche inactive hors interface, modifiable dans les controls/addon controls)
+
+
+Self-Interaction pour les joueurs:
+* Remove foliage -> Nécessite l'entrenching tool dans l'inventaire et permet à un joueur PRONE de couper l'herbe autour de lui.
+ L'objet est affiché en zeus pour pouvoir les supprimer plus tard dans la mission si besoin
