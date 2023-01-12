@@ -105,3 +105,29 @@ private _playerforcespectator = [
 ] call zen_context_menu_fnc_createAction;
 
 [_playerforcespectator, ["Captives"], 0] call zen_context_menu_fnc_addAction;
+
+// New suppressive fire
+private _suppress_new = [
+	"Rev_suppress",
+	"Suppressive fire",
+	"\x\zen\addons\modules\ui\target_ca.paa",
+	{
+		[_objects select 0] call RCC_fnc_suppress;
+	},
+	{
+		(count _objects) > 0;
+	},
+	[],
+	{},
+	{
+		params ["_action","_parameters"];
+		private _unit = (_parameters select 1) select 0;
+		private _group = group _unit;
+		if (!isNil {_group getVariable ["Rev_suppression",nil]}) then {
+			_action set [1, "Stop suppressive fire"];
+			_action set [4, {private _target = (group (_objects # 0) getVariable ["Rev_suppression",nil]); deleteVehicle _target}];
+		};
+	}
+] call zen_context_menu_fnc_createAction;
+
+[_suppress_new, [], 0] call zen_context_menu_fnc_addAction;
