@@ -29,6 +29,8 @@ private _onConfirm = {
 		[_text1, _timing1, _text2, _timing2, _text3, _timing3, _text4, _timing4, _side, _persidetext], { 
 		
 			params ["_text1", "_timing1", "_text2", "_timing2", "_text3", "_timing3", "_text4", "_timing4", "_side", "_persidetext"];
+
+			if (!hasInterface) exitWith {}; // only client-side
 			
 			if (!((side player) in _side) && _persidetext) exitWith {};
 
@@ -56,7 +58,7 @@ private _onConfirm = {
 				waitUntil {scriptDone _handle};
 			};
 		} 
-	] remoteExecCall ["spawn", [0, -2] select isDedicated, false];
+	] remoteExecCall ["spawn", 0, false];
 	
 };
 

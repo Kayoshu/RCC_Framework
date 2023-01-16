@@ -94,7 +94,7 @@ private _onConfirm = {
 			}; 
 			_fadeEffect spawn BIS_fnc_fadeEffect;
 		} 
-	] remoteExecCall ["spawn", [0, -2] select isDedicated, false];
+	] remoteExecCall ["spawn", 0, false];
 };
 
 // Module dialog 
