@@ -1,12 +1,10 @@
 // by ALIAS
-// null = [this] execvm "AL_localfog\low_fog.sqf";
+// [_low_fog_obj, _maincolor] execvm "AL_localfog\low_fog.sqf";
 //
 // Modified for 1er RCC by Kay
 //
 
 params ["_low_fog_obj", "_maincolor"];
-
-private ["_low_fog_obj", "_maincolor", "_re_iterate"];
 
 if (!hasInterface) exitWith {}; // only client-side
 
@@ -20,7 +18,7 @@ _maincolorfade pushback 0.3;
 while {alive _low_fog_obj} do 
 {
 	waitUntil {sleep 2; player distance _low_fog_obj < 2000}; // no need to check that every sec, 2k seems very distant
-	_re_iterate = 0;
+	private _re_iterate = 0;
 	
 	while {(player distance _low_fog_obj < 2000) AND (alive _low_fog_obj)} do 
 	{
