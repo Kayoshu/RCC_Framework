@@ -27,16 +27,6 @@ private _timing3 = 5;
 private _timing4 = 5;
 private _timing5 = 5;
 
-
-private _customendlock = missionNamespace getVariable "RCC_CustomEndLock"; // looking for locked value in missionNamespace
-if (_customendlock) exitWith {
-	["Editing Locked by another zeus"] call zen_common_fnc_showMessage;
-	systemChat "Editing Locked by another zeus";
-	playSound "FD_Start_F";
-};
-
-missionNamespace setVariable ["RCC_CustomEndLock", true, true]; // lock editing
-
 private _customendcontent = missionNamespace getVariable "RCC_CustomEndContent"; // looking for value in missionNamespace with preset texts
 if (isNil "_customendcontent") then { // if undefined first time we use the module
 	missionNamespace setVariable ["RCC_CustomEndContent", [_text1, _timing1, _text2, _timing2, _text3, _timing3, _text4, _timing4, _text5, _timing5, false, false, 10, false, false], true]; // set RCC_CustomEndContent variable (11th element is dummy)
@@ -45,7 +35,6 @@ if (isNil "_customendcontent") then { // if undefined first time we use the modu
 private _onCancel = {
 	params ["_dialogResult"];
 	missionNamespace setVariable ["RCC_CustomEndContent", _dialogResult, true]; // set missionNamespace variable
-	missionNamespace setVariable ["RCC_CustomEndLock", false, true]; // unlock editing
 };
 
 private _onConfirm = {

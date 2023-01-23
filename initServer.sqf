@@ -34,4 +34,3 @@ if (paramsArray select 2 == 1) then {
 
 // mission variables for zeus modules
 // missionNamespace setVariable ["CountSound", 1, true]; // init count for sound box module
-missionNamespace setVariable ["RCC_CustomEndLock", false, true]; // init variable to lock custom end editing in multizeus
