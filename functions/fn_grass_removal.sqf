@@ -19,7 +19,7 @@ private _grass_action = [
 	"Remove foliage", 
 	"\a3\Ui_f\data\IGUI\RscIngameUI\RscUnitInfo\SI_deploy_prone_ca.paa", 
 	{
-		[RCC_grass_removal, [], {
+		[RCC_grassremoval_time, [], {
 			private _object = createVehicle ['Land_ClutterCutter_large_F', position _player, [], 0, 'CAN_COLLIDE'];
 			["zen_common_addObjects", [[_object]]] call CBA_fnc_serverEvent;
 		}, {hint "Canceled"}, ""] call ace_common_fnc_progressBar;
@@ -27,4 +27,4 @@ private _grass_action = [
 	{(vehicle _player == _player) && isTouchingGround _player && (stance player == "PRONE") && ("ACE_EntrenchingTool" in (items player))}
 ] call ace_interact_menu_fnc_createAction;
 
-["Man", 1, ["ACE_SelfActions"], _grass_action, true] call ace_interact_menu_fnc_addActionToClass;
+["Man", 1, ["ACE_SelfActions", "ACE_Equipment"], _grass_action, true] call ace_interact_menu_fnc_addActionToClass;

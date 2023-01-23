@@ -12,24 +12,25 @@
  *
  */
 
-
-// Preset Texts here
-private _text1 = "";
-private _text2 = "";
-private _text3 = "";
-private _text4 = "";
-private _text5 = "";
-
-// Preset Timing here
-private _timing1 = 5;
-private _timing2 = 5;
-private _timing3 = 5;
-private _timing4 = 5;
-private _timing5 = 5;
-
 private _customendcontent = missionNamespace getVariable "RCC_CustomEndContent"; // looking for value in missionNamespace with preset texts
 if (isNil "_customendcontent") then { // if undefined first time we use the module
-	missionNamespace setVariable ["RCC_CustomEndContent", [_text1, _timing1, _text2, _timing2, _text3, _timing3, _text4, _timing4, _text5, _timing5, false, false, 10, false, false], true]; // set RCC_CustomEndContent variable (11th element is dummy)
+	missionNamespace setVariable ["RCC_CustomEndContent", [
+		RCC_customend_txt1, 
+		RCC_customend_time1, 
+		RCC_customend_txt2, 
+		RCC_customend_time2, 
+		RCC_customend_txt3, 
+		RCC_customend_time3, 
+		RCC_customend_txt4, 
+		RCC_customend_time4, 
+		RCC_customend_txt5, 
+		RCC_customend_time5, 
+		false, 
+		false, 
+		5, 
+		false, 
+		false
+	], true]; // set RCC_CustomEndContent variable (11th element is dummy)
 };
 
 private _onCancel = {
