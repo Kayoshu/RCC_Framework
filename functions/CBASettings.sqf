@@ -43,3 +43,6 @@ CBA Settings 1erRCC
 ["RCC_videopath3", "EDITBOX", ["Path to video 3","ogv extension needed"], [CBA_SETTINGS_RCC_MODVIDEOS], "", 1, {}, false] call CBA_fnc_addSetting;
 ["RCC_videopath4", "EDITBOX", ["Path to video 4","ogv extension needed"], [CBA_SETTINGS_RCC_MODVIDEOS], "", 1, {}, false] call CBA_fnc_addSetting;
 ["RCC_videopath5", "EDITBOX", ["Path to video 5","ogv extension needed"], [CBA_SETTINGS_RCC_MODVIDEOS], "", 1, {}, false] call CBA_fnc_addSetting;
+["RCC_videopath6", "EDITBOX", ["Path to video 6","ogv extension needed"], [CBA_SETTINGS_RCC_MODVIDEOS], "", 1, {}, false] call CBA_fnc_addSetting;
+["RCC_videopath7", "EDITBOX", ["Path to video 7","ogv extension needed"], [CBA_SETTINGS_RCC_MODVIDEOS], "", 1, {}, false] call CBA_fnc_addSetting;
+["RCC_videopath8", "EDITBOX", ["Path to video 8","ogv extension needed"], [CBA_SETTINGS_RCC_MODVIDEOS], "", 1, {}, false] call CBA_fnc_addSetting;

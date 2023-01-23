@@ -11,7 +11,7 @@
  *
  */
 
-private _videopath_array = ["", RCC_videopath1, RCC_videopath2, RCC_videopath3, RCC_videopath4, RCC_videopath5];
+private _videopath_array = ["", RCC_videopath1, RCC_videopath2, RCC_videopath3, RCC_videopath4, RCC_videopath5, RCC_videopath6, RCC_videopath7, RCC_videopath8];
  
 private _onConfirm = {
 	params ["_dialogResult", "_videopath_array"];
@@ -32,7 +32,17 @@ private _onConfirm = {
 [
 	"Play Videos", 
 	[
-		["TOOLBOX",["Videos"], [0, count _videopath_array, 1, [["Select one of the 5 videos below"], [_videopath_array select 1], [_videopath_array select 2], [_videopath_array select 3], [_videopath_array select 4], [_videopath_array select 5]]], true], 
+		["TOOLBOX",["Videos"], [0, count _videopath_array, 1, [
+			["Select one of the 6 videos below"], 
+			[_videopath_array select 1], 
+			[_videopath_array select 2], 
+			[_videopath_array select 3], 
+			[_videopath_array select 4], 
+			[_videopath_array select 5], 
+			[_videopath_array select 6], 
+			[_videopath_array select 7], 
+			[_videopath_array select 8]
+		]], true], 
 		["TOOLBOX:YESNO", "Exclude Zeus", [false], true], 
 		["TOOLBOX:YESNO", "Exclude Vehicule Drivers", [false], true], 
 		["TOOLBOX:YESNO", "Disable Sounds", [false], true], 
