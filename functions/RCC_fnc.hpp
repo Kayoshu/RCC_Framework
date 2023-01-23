@@ -8,11 +8,17 @@ class RCC
 	};
 
 
-    class Supperssion
+    class Suppression
 	{
 		file ="functions";
         class suppress_init {postinit = 1;};
         class suppress {};
+	};
+	
+    class Video
+	{
+		file ="functions";
+        class video_init {postinit = 1;};
 	};
 	
 };

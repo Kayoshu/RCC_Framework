@@ -37,6 +37,7 @@ if !(_hasZen) exitWith { systemChat "ZEN not detected";};
 ["1er RCC Scenario", "Fade Music", {execVM "rcc_zeus\rcc_zeus_fademusic.sqf";}, "\a3\Modules_F_Curator\Data\portraitMusic_ca.paa"] call zen_custom_modules_fnc_register;
 ["1er RCC Scenario", "Transition", {execVM "rcc_zeus\rcc_zeus_transition.sqf";}, "\a3\ui_f\data\igui\cfg\simpletasks\types\wait_ca.paa"] call zen_custom_modules_fnc_register;
 ["1er RCC Scenario", "Transition Time", {execVM "rcc_zeus\rcc_zeus_transitiontime.sqf";}, "\a3\Modules_F_Curator\Data\iconSkiptime_ca.paa"] call zen_custom_modules_fnc_register;
+["1er RCC Scenario", "Videos", {execVM "rcc_zeus\rcc_zeus_videos.sqf";}, "\a3\Modules_F_Curator\Data\portraitCuratorSetCamera_ca.paa"] call zen_custom_modules_fnc_register;
 // Various Tools
 ["1er RCC Tools", "Check Mods Player", {_this execVM "rcc_zeus\rcc_zeus_chkmodsplayer.sqf";}] call zen_custom_modules_fnc_register;
 ["1er RCC Tools", "Force Delete", {_this execVM "rcc_zeus\rcc_zeus_forcedelete.sqf";}, "\z\ace\addons\zeus\UI\Icon_Module_Zeus_Editable_Objects_ca.paa"] call zen_custom_modules_fnc_register;

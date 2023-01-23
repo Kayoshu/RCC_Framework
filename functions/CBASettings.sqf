@@ -6,6 +6,7 @@ CBA Settings 1erRCC
 #define CBA_SETTINGS_RCC_MODCUSTOMEND "1erRCC Settings - Module CustomEnd"
 #define CBA_SETTINGS_RCC_MODVIDEOS "1erRCC Settings - Module Videos"
 
+
 // grass removal
 [
 	"RCC_grassremoval_time", 
@@ -17,6 +18,7 @@ CBA Settings 1erRCC
 	{}, 
 	false
 ] call CBA_fnc_addSetting;
+
 
 // module CustomEnd
 ["RCC_customend_txt1", "EDITBOX", ["Text 1"], [CBA_SETTINGS_RCC_MODCUSTOMEND], "", 1, {}, false] call CBA_fnc_addSetting;
@@ -36,35 +38,8 @@ CBA Settings 1erRCC
 
 
 // module videos
-[
-	"RCC_videopath1", 
-	"EDITBOX", 
-	["Video 1","Path to video 1: mission folder as base folder, ogv extension needed"], 
-	[CBA_SETTINGS_RCC_MODVIDEOS], 
-	"", 
-	1, 
-	{}, 
-	false
-] call CBA_fnc_addSetting;
-
-[
-	"RCC_videopath2", 
-	"EDITBOX", 
-	["Video 2","Path to video 2: mission folder as base folder, ogv extension needed"], 
-	[CBA_SETTINGS_RCC_MODVIDEOS], 
-	"", 
-	1, 
-	{}, 
-	false
-] call CBA_fnc_addSetting;
-
-[
-	"RCC_videopath3", 
-	"EDITBOX", 
-	["Video 3","Path to video 3: mission folder as base folder, ogv extension needed"], 
-	[CBA_SETTINGS_RCC_MODVIDEOS], 
-	"", 
-	1, 
-	{}, 
-	false
-] call CBA_fnc_addSetting;
+["RCC_videopath1", "EDITBOX", ["Path to video 1","ogv extension needed"], [CBA_SETTINGS_RCC_MODVIDEOS], "", 1, {}, false] call CBA_fnc_addSetting;
+["RCC_videopath2", "EDITBOX", ["Path to video 2","ogv extension needed"], [CBA_SETTINGS_RCC_MODVIDEOS], "", 1, {}, false] call CBA_fnc_addSetting;
+["RCC_videopath3", "EDITBOX", ["Path to video 3","ogv extension needed"], [CBA_SETTINGS_RCC_MODVIDEOS], "", 1, {}, false] call CBA_fnc_addSetting;
+["RCC_videopath4", "EDITBOX", ["Path to video 4","ogv extension needed"], [CBA_SETTINGS_RCC_MODVIDEOS], "", 1, {}, false] call CBA_fnc_addSetting;
+["RCC_videopath5", "EDITBOX", ["Path to video 5","ogv extension needed"], [CBA_SETTINGS_RCC_MODVIDEOS], "", 1, {}, false] call CBA_fnc_addSetting;
