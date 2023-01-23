@@ -23,7 +23,7 @@ private _onConfirm = {
         playSound "FD_Start_F";
 	};
 	
-	["RCC_video_play", [_videopath_array#_path_number, _excludezeus, _excludedrivers, _environment, _userinput]] call CBA_fnc_globalEvent;
+	["RCC_video_play", [_videopath_array#_path_number, _excludezeus, _excludedrivers, _environment, _userinput, _tfarmute]] call CBA_fnc_globalEvent;
 	
 };
 
@@ -33,7 +33,7 @@ private _onConfirm = {
 	"Play Videos", 
 	[
 		["TOOLBOX",["Videos"], [0, count _videopath_array, 1, [
-			["Select one of the 6 videos below"], 
+			["Select one of the 8 videos below"], 
 			[_videopath_array select 1], 
 			[_videopath_array select 2], 
 			[_videopath_array select 3], 
