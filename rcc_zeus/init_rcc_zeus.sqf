@@ -69,7 +69,7 @@ private _tpsquadmemberaction = [
 	"teleport_to_squadmate", 
 	"Teleport To Squadmate", 
 	["x\zen\addons\context_actions\ui\marker_ca.paa", [1, 0.5, 0, 0.7]], 
-	{_hoveredEntity execVM "rcc_zeus\rcc_zeus_tpsquadmember.sqf";}, 
+	{[_position, _hoveredEntity] execVM "rcc_zeus\rcc_zeus_tpsquadmember.sqf";}, 
 	{[_hoveredEntity] call RCC_fnc_isAlivePlayerUnit && !RCC_CrowsZAModLoaded}
 ] call zen_context_menu_fnc_createAction;
 

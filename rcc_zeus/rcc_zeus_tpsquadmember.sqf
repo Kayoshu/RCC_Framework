@@ -4,7 +4,8 @@
  * Teleport player on squad member
  *
  * Arguments:
- * 0: player
+ * 0: logic position (not used)
+ * 1: player
  *
  * Return Value:
  * None
@@ -13,7 +14,7 @@
  * this execVM "rcc_zeus\rcc_zeus_tpsquadmember.sqf";
  *
  */
-params ["_hoveredEntity"];
+params [["_pos", [0,0,0] , [[]], 3], ["_hoveredEntity", objNull, [objNull]]];
 
 private _onConfirm = {
 	params ["_dialogResult","_in"];
