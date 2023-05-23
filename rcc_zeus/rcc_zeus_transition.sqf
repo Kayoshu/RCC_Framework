@@ -1,14 +1,12 @@
 /*
  * Author: 1er RCC - Kay
  * Custom Zeus module
+ * Preset texts & Timers in CBA Settings
  * 4 Transition Texts (empty texts are not displayed)
  * Text position: top, middle, bottom
  *
  * Arguments:
  * No Parameters
- *
- * Return Value:
- * None
  *
  */
 
@@ -31,7 +29,7 @@ private _onConfirm = {
 	[ 
 		[_textposition, _text1, _timing1, _text2, _timing2, _text3, _timing3, _text4, _timing4, _side, _persidetext], { 
 		
-			params ["_text1", "_timing1", "_text2", "_timing2", "_text3", "_timing3", "_text4", "_timing4", "_side", "_persidetext"];
+			params ["_textposition", "_text1", "_timing1", "_text2", "_timing2", "_text3", "_timing3", "_text4", "_timing4", "_side", "_persidetext"];
 
 			if (!hasInterface) exitWith {}; // only client-side
 			
