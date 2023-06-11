@@ -13,8 +13,7 @@
  */
 
 if (missionNamespace getVariable "RCC_TplLivesUnlimited") exitWith {
-	["Unlimited Lives, Toggle Limited Tickets First"] call zen_common_fnc_showMessage;
-	systemChat "Unlimited Lives, Toggle Limited Tickets First";
+	["Unlimited Lives, Toggle Limited Tickets First", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	playSound "FD_Start_F";
 };
 
@@ -38,7 +37,7 @@ private _onConfirm = {
 		};
 	} forEach allPlayers;
 
-	systemChat format["%1 lives added to every alive player", round _livestoadd];
+	[format["%1 lives added to every alive player", round _livestoadd], -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 
 };
 

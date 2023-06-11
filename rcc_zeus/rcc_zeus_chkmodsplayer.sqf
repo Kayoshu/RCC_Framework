@@ -16,31 +16,17 @@ params [["_pos", [0,0,0] , [[]], 3], ["_unit", objNull, [objNull]]];
 
 //if is  not player, exit
 if (isNull _unit || !(isPlayer _unit)) exitWith {
-	["Select a player"] call zen_common_fnc_showMessage;
-	systemChat "Select a player";
+	["Select a player", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	playSound "FD_Start_F";
 };
 
-modsdisplay = "";
-
-RCC_fnc_chkModsplayer = {
-	modsdisplay = getLoadedModsInfo;
-};
-
-["zen_common_execute", [RCC_fnc_chkModsplayer, [modsdisplay]], _unit] call CBA_fnc_targetEvent;
-
-private _modsfiltered = "";
-{
-	// Current result is saved in variable _x
-	if !(_x select 3) then {
-		private _mod = _x select 1;
-		_modsfiltered = _modsfiltered + _mod + " - ";
-	}
-	
-} forEach modsdisplay;
+private _plyUID = getPlayerUID _unit;
+private _modsdisplay = missionNamespace getVariable "RCCMods" + _plyUID; // looking for value in missionNamespace for that player
 
 // Module dialog
 [
-	"Check player mods", [["EDIT:MULTI", "Mods loaded", [_modsfiltered, nil, 24]]], {}, {}
+	"Check player mods", [
+		["EDIT:MULTI", name _unit, [_plyUID, nil, 1]],
+		["EDIT:MULTI", "Mods loaded", [_modsdisplay, nil, 12]]
+	], {}, {}
 ] call zen_dialog_fnc_create;
-

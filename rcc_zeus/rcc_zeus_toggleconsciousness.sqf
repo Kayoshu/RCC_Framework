@@ -18,14 +18,12 @@ params [["_pos", [0,0,0] , [[]], 3], ["_unit", objNull, [objNull]]];
 _unit = effectiveCommander _unit;
 
 if !(_unit isKindOf "CAManBase") exitWith {
-	 ["Select a unit"] call zen_common_fnc_showMessage;
-	 systemChat "Select a unit";
+	["Select a unit", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	 playSound "FD_Start_F";
 };
 
 if (!alive _unit) exitWith {
-	["Unit is dead"] call zen_common_fnc_showMessage;
-	systemChat "Unit is dead";
+	["Unit is dead", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	playSound "FD_Start_F";
 };
 

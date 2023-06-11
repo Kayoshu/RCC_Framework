@@ -16,10 +16,10 @@ private _onConfirm = {
 	
 	if (_dialogResult select 0) then {
 		missionNamespace setVariable ["RCC_SafeStart", true, true];
-		systemChat "Safestart ON";
+		["Safestart ON", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	} else {
 		missionNamespace setVariable ["RCC_SafeStart", false, true];
-		systemChat "Safestart OFF";
+		["Safestart OFF", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	};
 	
 };

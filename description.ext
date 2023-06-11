@@ -32,3 +32,12 @@ class Params
 	};
 };
 
+class Extended_PreInit_EventHandlers
+{
+	class RCC_CBA_keybinds {init = "call compile preProcessFileLineNumbers 'functions\CBAKeys.sqf'";};
+	class RCC_CBA_settings {init = "call compile preprocessFileLineNumbers 'functions\CBASettings.sqf'";};
+};
+
+class cfgFunctions {
+	#include "functions\RCC_fnc.hpp"
+};

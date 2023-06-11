@@ -36,8 +36,7 @@ private _onConfirm = {
 
 	["zen_common_execute", [RCC_fnc_GroupDelete, []]] call CBA_fnc_globalEvent;
 	
-	["%1 Empty Groups deleted", _countemptygroup] call zen_common_fnc_showMessage;
-	systemChat format["%1 Empty Groups deleted", _countemptygroup];
+	[format["%1 Empty Groups deleted", _countemptygroup], -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	playSound "FD_Start_F";
 };
 

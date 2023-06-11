@@ -12,40 +12,30 @@
  *
  */
 
-
-// Preset Texts here
-private _text1 = "";
-private _text2 = "";
-private _text3 = "";
-private _text4 = "";
-private _text5 = "";
-
-// Preset Timing here
-private _timing1 = 5;
-private _timing2 = 5;
-private _timing3 = 5;
-private _timing4 = 5;
-private _timing5 = 5;
-
-
-private _customendlock = missionNamespace getVariable "RCC_CustomEndLock"; // looking for locked value in missionNamespace
-if (_customendlock) exitWith {
-	["Editing Locked by another zeus"] call zen_common_fnc_showMessage;
-	systemChat "Editing Locked by another zeus";
-	playSound "FD_Start_F";
-};
-
-missionNamespace setVariable ["RCC_CustomEndLock", true, true]; // lock editing
-
 private _customendcontent = missionNamespace getVariable "RCC_CustomEndContent"; // looking for value in missionNamespace with preset texts
 if (isNil "_customendcontent") then { // if undefined first time we use the module
-	missionNamespace setVariable ["RCC_CustomEndContent", [_text1, _timing1, _text2, _timing2, _text3, _timing3, _text4, _timing4, _text5, _timing5, false, false, 10, false, false], true]; // set RCC_CustomEndContent variable (11th element is dummy)
+	missionNamespace setVariable ["RCC_CustomEndContent", [
+		RCC_customend_txt1, 
+		RCC_customend_time1, 
+		RCC_customend_txt2, 
+		RCC_customend_time2, 
+		RCC_customend_txt3, 
+		RCC_customend_time3, 
+		RCC_customend_txt4, 
+		RCC_customend_time4, 
+		RCC_customend_txt5, 
+		RCC_customend_time5, 
+		false, 
+		false, 
+		5, 
+		false, 
+		false
+	], true]; // set RCC_CustomEndContent variable (11th element is dummy)
 };
 
 private _onCancel = {
 	params ["_dialogResult"];
 	missionNamespace setVariable ["RCC_CustomEndContent", _dialogResult, true]; // set missionNamespace variable
-	missionNamespace setVariable ["RCC_CustomEndLock", false, true]; // unlock editing
 };
 
 private _onConfirm = {
@@ -53,8 +43,7 @@ private _onConfirm = {
 	_dialogResult params ["_text1", "_timing1", "_text2", "_timing2", "_text3", "_timing3", "_text4", "_timing4", "_text5", "_timing5", "_dummy", "_failed", "_fadetime", "_fadecolor", "_invincible"];
 
 	if (_text1 == "" && _text2 == "" && _text3 == "" && _text4 == "" && _text5 == "") exitWith {
-        ["All Text Empty"] call zen_common_fnc_showMessage;
-		systemChat "All Text Empty";
+		["All Text Empty", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
         playSound "FD_Start_F";
 	};
 	
@@ -72,6 +61,7 @@ private _onConfirm = {
 
 	private _allPlayers = call CBA_fnc_players;
 	if (_invincible) then { // apply invincibility
+		systemChat "Invincibility ON";
 		{
 			["zen_common_allowDamage", [_x, false], _x] call CBA_fnc_targetEvent;
 			if (!isNull objectParent _x) then {
@@ -94,7 +84,7 @@ private _onConfirm = {
 			}; 
 			_fadeEffect spawn BIS_fnc_fadeEffect;
 		} 
-	] remoteExecCall ["spawn", [0, -2] select isDedicated, false];
+	] remoteExecCall ["spawn", 0, false];
 };
 
 // Module dialog 

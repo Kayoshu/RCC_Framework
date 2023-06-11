@@ -4,7 +4,8 @@
  * Teleport player on squad member
  *
  * Arguments:
- * 0: player
+ * 0: logic position (not used)
+ * 1: player
  *
  * Return Value:
  * None
@@ -13,7 +14,7 @@
  * this execVM "rcc_zeus\rcc_zeus_tpsquadmember.sqf";
  *
  */
-params ["_hoveredEntity"];
+params [["_pos", [0,0,0] , [[]], 3], ["_hoveredEntity", objNull, [objNull]]];
 
 private _onConfirm = {
 	params ["_dialogResult","_in"];
@@ -40,9 +41,8 @@ private _allSquadMembers = units group _hoveredEntity;
 _allSquadMembers deleteAt (_allSquadMembers find _hoveredEntity); // Remove _hoveredEntity from the list
 
 if (count _allSquadMembers == 0) exitWith {
-	 ["Player is alone in squad"] call zen_common_fnc_showMessage;
-	 systemChat "Player is alone in squad";
-	 playSound "FD_Start_F";
+	["Player is alone in squad", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
+	playSound "FD_Start_F";
 };
 
 // Get pretty names array

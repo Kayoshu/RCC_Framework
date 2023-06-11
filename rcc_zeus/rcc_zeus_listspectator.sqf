@@ -35,8 +35,7 @@ private _exitcheck = true;
 } forEach _spectators;
 
 if (_exitcheck) exitWith {
-	["No players in spectator"] call zen_common_fnc_showMessage;
-	systemChat "No players in spectator";
+	["No players in spectator", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	playSound "FD_Start_F";
 };
 
@@ -61,7 +60,7 @@ private _onConfirm = {
 				["zen_common_hint", ["Zeus gave you 1 life"], (_dynamicPlayerarray#_i)] call CBA_fnc_targetEvent; // inform player
 			};
 		};
-	}; 
+	};
 	systemChat _infomodified;
 };
 

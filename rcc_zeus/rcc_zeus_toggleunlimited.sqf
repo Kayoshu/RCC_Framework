@@ -16,10 +16,10 @@ private _onConfirm = {
 	
 	if (_dialogResult select 0) then {
 		missionNamespace setVariable ["RCC_TplLivesUnlimited", true, true];
-		systemChat "Unlimited Lives";
+		["Unlimited Lives", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	} else {
 		missionNamespace setVariable ["RCC_TplLivesUnlimited", false, true];
-		systemChat "Limited Tickets";
+		["Limited Tickets", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	};
 	
 };

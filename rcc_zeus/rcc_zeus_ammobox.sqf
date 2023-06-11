@@ -16,8 +16,7 @@ params [["_pos", [0,0,0] , [[]], 3], ["_box", objNull, [objNull]]];
 
 // if param is empty or Man unit, exit
 if (isNull _box || _box isKindOf "CAManBase") exitWith {
-	["Need an objet with inventory: vehicle or box"] call zen_common_fnc_showMessage;
-	systemChat "Need an objet with inventory: vehicle or box";
+	["Need an objet with inventory: vehicle or box", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;
 	playSound "FD_Start_F";
 };
 
