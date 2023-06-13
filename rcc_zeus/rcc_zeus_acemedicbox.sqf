@@ -35,12 +35,12 @@ private _onConfirm = {
 	};
 
 	for "_i" from 0 to (count _dialogResult -1) step 1 do { 
-		_box addWeaponCargoGlobal [_medicalarray#(_i*2), _dialogResult#(_i+1)];
+		_box addItemCargoGlobal [_medicalarray#(_i*2), _dialogResult#(_i+1)];
 	}; 
 };
 
 // Construct medical classnames & numbers array
-private _medicalarray = ["ACE_fieldDressing", 60, "ACE_tourniquet", 40, "ACE_splint", 20, "ACE_morphine", 25, "ACE_epinephrine", 25, "ACE_bloodIV", 20, "ACE_bloodIV_500", 20, "ACE_bloodIV_250", 20, "ACE_personalAidKit", 0, "ACE_bodyBag", 0];
+private _medicalarray = ["ACE_fieldDressing", 45, "ACE_tourniquet", 16, "ACE_splint", 16, "ACE_morphine", 15, "ACE_epinephrine", 12, "ACE_bloodIV", 15, "ACE_bloodIV_500", 15, "ACE_bloodIV_250", 7, "ACE_personalAidKit", 0, "ACE_bodyBag", 0];
 
 if (ace_medical_treatment_advancedBandages != 0) then {
 	_medicalarray append ["ACE_elasticBandage", 40, "ACE_packingBandage", 40, "ACE_quikclot", 40];
