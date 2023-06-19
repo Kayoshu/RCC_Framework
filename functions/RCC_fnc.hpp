@@ -1,6 +1,12 @@
 class RCC
 {
 
+	class Safestart
+	{
+		file ="functions";
+		class safestart {postInit = 1;};
+	};
+	
     class Grass_removal
 	{
 		file="functions";

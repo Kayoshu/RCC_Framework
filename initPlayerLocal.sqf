@@ -29,7 +29,7 @@ if (isNil "_lifeplayerid") then { // if undefined then it's a first login
 };
 
 // Init spectator variables
-player setVariable ["RCC_forcespectate", false, true];
+player setVariable ["RCC_forcespectate", false, true]; // probably no need to broadcast that variable in here
 player setVariable ["RCC_IsSpectator", false];
 
 RCC_CrowsZAModLoaded = isClass (configFile >> "CfgPatches" >> "CrowsZA"); // CrowsZA locally loaded
@@ -86,8 +86,12 @@ RCC_CBASpectateWatch = [
 	}, 3
 ] call CBA_fnc_addPerFrameHandler;
 
-// Call the script to init safestart/safezone client side
-execVM "functions\fn_safestart_client.sqf";
+// init safezone variable on player
+player setVariable ["RCC_safezone", false, true]; // probably no need to broadcast that variable in here, and in eventhandler which are local to players
+// safestart
+if (missionNamespace getVariable "RCC_SafeStart") then {
+	["RCC_player_safezone", [true, false]] call CBA_fnc_localEvent;
+};
 
 // Get loaded mods variable
 private _modsdisplay = getLoadedModsInfo;
