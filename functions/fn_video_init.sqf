@@ -37,6 +37,14 @@ private _eventid = ["RCC_video_play", {
 		};
 		if (_tfarmute) then {
 			0 call TFAR_fnc_setVoiceVolume;
+			if (([player] call TFAR_fnc_getRadioItems) isNotEqualTo []) then {
+				RCCplayer_currentSRvolume = (call TFAR_fnc_ActiveSwRadio) call TFAR_fnc_getSwVolume;
+				[call TFAR_fnc_activeSWRadio, 0] call TFAR_fnc_setSwVolume;
+			};
+			if (!isNil {player call TFAR_fnc_backpackLr}) then { 
+				RCCplayer_currentLRvolume = (call TFAR_fnc_activeLrRadio) call TFAR_fnc_getLrVolume;
+				[call TFAR_fnc_activeLrRadio, 0] call TFAR_fnc_setLrVolume;
+			};
 		};
 		if (_environment) then {
 			1.5 fadeSound 0;
@@ -52,6 +60,13 @@ private _eventid = ["RCC_video_play", {
 		};
 		if (_tfarmute) then {
 			20 call TFAR_fnc_setVoiceVolume;
+			if (([player] call TFAR_fnc_getRadioItems) isNotEqualTo []) then {
+				[call TFAR_fnc_activeSWRadio, RCCplayer_currentSRvolume] call TFAR_fnc_setSwVolume;
+			};
+			if (!isNil {player call TFAR_fnc_backpackLr}) then { 
+				[call TFAR_fnc_activeLrRadio, RCCplayer_currentLRvolume] call TFAR_fnc_setLrVolume;
+			};
+
 		};
 		if (_userinput) then {
 			[ACE_player, currentWeapon ACE_player, currentMuzzle ACE_player] call ace_safemode_fnc_unlockSafety;
