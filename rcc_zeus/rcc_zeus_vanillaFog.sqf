@@ -3,11 +3,7 @@
  * Vanilla Fog Transition
  *
  * Arguments:
- * 0: logic position (not used)
- * 1: attached object (not used)
- *
- * Return Value:
- * none
+ * No Parameters
  *
  */
 

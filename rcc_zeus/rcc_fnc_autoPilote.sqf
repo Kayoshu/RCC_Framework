@@ -6,9 +6,7 @@
  * Arguments:
  * 0: vehicle triggering action
  * 1: player triggering action
- *
- * Return Value:
- * None
+
  *
  * Example (in eden init field):
  * this setVariable ["RCC_autopilot", true, true];

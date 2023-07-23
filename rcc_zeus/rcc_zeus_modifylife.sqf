@@ -1,17 +1,14 @@
 /*
  * Author: 1er RCC - Kay
- * Custom Zeus module (lives template)
+ * Called from a ZEN context menu action.
  * Modify individual player lives
  *
  * Arguments:
- * 0: logic position (not used)
- * 1: attached player
- *
- * Return Value:
- * None
+ * 0: position (not used)
+ * 1: object player
  *
  * Example:
- * this execVM "rcc_zeus\rcc_zeus_modifylife.sqf";
+ * [_position, _player] execVM "rcc_zeus\rcc_zeus_modifylife.sqf";
  *
  */
 params [["_pos", [0,0,0] , [[]], 3], ["_unit", objNull, [objNull]]];

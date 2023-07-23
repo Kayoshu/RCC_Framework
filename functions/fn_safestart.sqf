@@ -8,7 +8,10 @@
  * No parameters
  *
  * Example:
- * call RCC_fnc_safestart
+ * ["RCC_player_safezone", [_silent, _safezone]] call CBA_fnc_globalEvent;
+ *
+ * _silent - boolean Silent Event (do not inform players)
+ * _safezone - boolean Safezone Event
  *
  */
 

@@ -7,9 +7,6 @@
  * 0: logic position (not used)
  * 1: attached object
  *
- * Return Value:
- * None
- *
  */
 params [["_pos", [0,0,0] , [[]], 3], ["_object", objNull, [objNull]]];
 

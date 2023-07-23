@@ -7,9 +7,6 @@
  * 0: logic position (not used)
  * 1: attached unit
  *
- * Return Value:
- * None
- *
  */
 params [["_pos", [0,0,0] , [[]], 3], ["_unit", objNull, [objNull]]];
 

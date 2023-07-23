@@ -7,9 +7,6 @@
  * Arguments:
  * No Parameters
  *
- * Return Value:
- * None
- *
  */
 
 private _customendcontent = missionNamespace getVariable "RCC_CustomEndContent"; // looking for value in missionNamespace with preset texts

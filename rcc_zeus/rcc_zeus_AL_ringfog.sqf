@@ -7,9 +7,6 @@
  * 0: fog position
  * 1: attached object (not used)
  *
- * Return Value:
- * None
- *
  */
 params [["_pos", [0,0,0] , [[]], 3], ["_object", objNull, [objNull]]];
 

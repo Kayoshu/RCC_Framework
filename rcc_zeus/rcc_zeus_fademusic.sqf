@@ -6,9 +6,7 @@
  * Arguments:
  * No Parameters
  *
- * Return Value:
- * None
- *
+ * TODO: Rework wuth CBA Event instead of zen_common_execute
  */
 
 private _onConfirm = {

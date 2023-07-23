@@ -17,14 +17,14 @@ class RCC
     class Suppression
 	{
 		file ="functions";
-        class suppress_init {postinit = 1;};
+        class suppress_init {postInit = 1;};
         class suppress {};
 	};
 	
     class Video
 	{
 		file ="functions";
-        class video_init {postinit = 1;};
+        class video_init {postInit = 1;};
 	};
 	
 };

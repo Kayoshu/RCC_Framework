@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * this execVM "rcc_zeus\rcc_zeus_tpsquadmember.sqf";
+ * [_position, _player] execVM "rcc_zeus\rcc_zeus_tpsquadmember.sqf";
  *
  */
 params [["_pos", [0,0,0] , [[]], 3], ["_hoveredEntity", objNull, [objNull]]];

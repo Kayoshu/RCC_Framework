@@ -6,9 +6,6 @@
  * Arguments:
  * No arguments
  *
- * Return Value:
- * None
- *
  */
 
 if (!hasInterface) exitWith {};

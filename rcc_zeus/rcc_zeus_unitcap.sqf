@@ -6,10 +6,9 @@
  * Arguments:
  * No Parameters
  *
- * Return Value:
- * None
- *
  */
+
+params [["_pos", [0,0,0] , [[]], 3], ["_unit", objNull, [objNull]]];
 
 private _countgroup = 0;
 private _countemptygroup = 0;

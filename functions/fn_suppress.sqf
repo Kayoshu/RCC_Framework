@@ -8,7 +8,7 @@
  * 0: Selected unit <OBJECT>
  *
  * Example:
- * [_objects select 0] call Rev_fnc_suppress;
+ * [_objects select 0] call RCC_fnc_suppress;
  *
 
 1.1
@@ -22,7 +22,7 @@ params [
 	["_unit", objNull, [objNull]]
 ];
 
-if (isNull findDisplay 312) exitWith {diag_log "Rev_fnc_suppress: Function called when not curator!"};
+if (isNull findDisplay 312) exitWith {diag_log "RCC_fnc_suppress: Function called when not curator!"};
 
 private _display = findDisplay 312;
 _display setVariable ["Rev_suppress_unit",_unit];

@@ -3,12 +3,6 @@
  * Register custom RCC modules and right-click actions
  * Executes at mission start
  *
- * Arguments:
- * No arguments
- *
- * Return Value:
- * None
- *
  */
 
 if (!hasInterface) exitWith {};
@@ -44,7 +38,7 @@ if !(_hasZen) exitWith { systemChat "ZEN not detected";};
 ["1er RCC Tools", "Force Delete", {_this execVM "rcc_zeus\rcc_zeus_forcedelete.sqf";}, "\z\ace\addons\zeus\UI\Icon_Module_Zeus_Editable_Objects_ca.paa"] call zen_custom_modules_fnc_register;
 ["1er RCC Tools", "Group Cap Reset", {execVM "rcc_zeus\rcc_zeus_unitcap.sqf";}, "\a3\ui_f\data\igui\cfg\simpletasks\types\use_ca.paa"] call zen_custom_modules_fnc_register;
 ["1er RCC Tools", "Toggle Consciousness", {_this execVM "rcc_zeus\rcc_zeus_toggleconsciousness.sqf";}, "\z\ace\addons\zeus\UI\Icon_Module_Zeus_Unconscious_ca.paa"] call zen_custom_modules_fnc_register;
-// Vanilla Fg
+// Vanilla Fog
 ["1er RCC Environment", "Vanilla Fog", {_this execVM "rcc_zeus\rcc_zeus_vanillaFog.sqf";}, "\a3\Modules_F_Curator\Data\portraitSmoke_ca.paa"] call zen_custom_modules_fnc_register;
 
 // Custom Right-Click Actions

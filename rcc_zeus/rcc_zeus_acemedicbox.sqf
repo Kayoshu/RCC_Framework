@@ -8,12 +8,10 @@
  * 0: logic position (not used)
  * 1: attached object with inventory (vehicle or ammobox)
  *
- * Return Value:
- * None
- *
  * Example:
  * _this execVM "rcc_zeus\rcc_zeus_acemedicbox.sqf";
  *
+ * TODO: add surgical kit depending on ACE CBA
  */
 params [["_pos", [0,0,0] , [[]], 3], ["_box", objNull, [objNull]]];
 

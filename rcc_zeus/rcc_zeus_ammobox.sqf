@@ -2,14 +2,10 @@
  * Author: 1er RCC - Kay
  * Custom Zeus module
  * Add magazine (of each sort actually in player inventories) to ammobox or vehicle
- * (detecting advanced bandages & advanced medication)
  *
  * Arguments:
  * 0: logic position (not used)
  * 1: attached object with inventory (vehicle or ammobox)
- *
- * Return Value:
- * None
  *
  */
 params [["_pos", [0,0,0] , [[]], 3], ["_box", objNull, [objNull]]];

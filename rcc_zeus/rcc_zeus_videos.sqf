@@ -2,15 +2,16 @@
  * Author: 1er RCC - Kay
  * Custom Zeus module
  * Play Videos (path defined in CBA settings)
+ * Path can be in mission or mod path
+ * exemple: x\RCC\addons\main\
  *
  * Arguments:
  * No Parameters
  *
- * Return Value:
- * None
- *
  */
 
+params [["_pos", [0,0,0] , [[]], 3], ["_object", objNull, [objNull]]];
+ 
 private _videopath_array = ["", RCC_videopath1, RCC_videopath2, RCC_videopath3, RCC_videopath4, RCC_videopath5, RCC_videopath6, RCC_videopath7, RCC_videopath8];
  
 private _onConfirm = {

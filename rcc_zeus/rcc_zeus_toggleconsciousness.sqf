@@ -1,15 +1,13 @@
 /*
  * Author: 1er RCC - Kay
  * Custom Zeus module
+ * Or called from a ZEN context menu action.
  * Forces a unit to wake up or go unconscious, regardless if they have stable vitals or not.
  * (works with AI without killing them)
  *
  * Arguments:
- * 0: logic position (not used)
+ * 0: position (not used)
  * 1: attached unit
- *
- * Return Value:
- * None
  *
  */
 params [["_pos", [0,0,0] , [[]], 3], ["_unit", objNull, [objNull]]];

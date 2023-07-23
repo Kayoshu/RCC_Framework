@@ -2,20 +2,20 @@
  * Author: 1er RCC - Kay
  * Custom Zeus module
  * List all players actually in spectator with their respective lives:
- *     -1 is player in spectator having reconnected with 0 life
- *     0 is player dead & in spectator
- *     positive is player in "force spectator"
+ * ___ -1 is player in spectator having reconnected with 0 life
+ * ___ 0 is player dead & in spectator
+ * ___ positive is player in "force spectator"
  *
  * Checkbox to get player out of spectator, either un-force spectator or give him 1 life
  * He will spawn at position of death or debug spawn position regardless of respawnonstart
  *
  * Arguments:
- * No Parameters
- *
- * Return Value:
- * None
+ * 0: logic position (not used)
+ * 1: attached unit (not used)
  *
  */
+
+params [["_pos", [0,0,0] , [[]], 3], ["_unit", objNull, [objNull]]];
 
 // Construct spectators & checkbox arrays
 private _dynamicPlayerarray = [];

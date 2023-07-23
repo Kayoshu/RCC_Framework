@@ -7,10 +7,9 @@
  * Arguments:
  * No Parameters
  *
- * Return Value:
- * None
- *
  */
+
+params [["_pos", [0,0,0] , [[]], 3], ["_unit", objNull, [objNull]]];
 
 if (missionNamespace getVariable "RCC_TplLivesUnlimited") exitWith {
 	["Unlimited Lives, Toggle Limited Tickets First", -1, 1, 4, 0] spawn BIS_fnc_dynamicText;

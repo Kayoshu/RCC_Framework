@@ -1,14 +1,10 @@
-
 /*
  * Author: Reeveli
- * Client side function to add ace action to enable players to cut grass while prone. Called as postinit.
+ * Client side function to add ace action to enable players to cut grass while prone.
+ * Called as postinit.
  *
- * Arguments: <NONE>
- *
- * Return Value: <NONE>
- *
- * Example:
- * call RCC_fnc_grass_removal
+ * Arguments:
+ * No parameters
  *
  */
 

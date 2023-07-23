@@ -4,10 +4,17 @@
  * Called as a post-init function.
  *
  * Arguments:
- * _videopath, _excludezeus, _excludedrivers, _environment, _userinput
+ * No Parameters
  *
  * Example:
- * call RCC_fnc_video_init
+ * ["RCC_video_play", [_videopath, _excludezeus, _excludedrivers, _environment, _userinput, _tfarmute]] call CBA_fnc_globalEvent;
+ *
+ * _videopath - video path (relative to mission or mod)
+ * _excludezeus - boolean exclude zeus from video
+ * _excludedrivers - boolean exclude all drivers from video
+ * _environment - boolean disable environment sounds
+ * _userinput - boolean disable user input (simulation)
+ * _tfarmute - boolean tfar muting (local & radios)
  *
  */
 

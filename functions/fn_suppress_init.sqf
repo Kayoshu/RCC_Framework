@@ -7,7 +7,7 @@
  * Arguments: NONE
  *
  * Example:
- * call Rev_fnc_suppress_init
+ * call RCC_fnc_suppress_init
  *
  */
 

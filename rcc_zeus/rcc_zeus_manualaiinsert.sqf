@@ -7,9 +7,6 @@
  * 0: logic position (not used)
  * 1: attached helicopter
  *
- * Return Value:
- * None
- *
  * Example:
  * this execVM "rcc_zeus\rcc_zeus_manualaiinsert.sqf";
  *

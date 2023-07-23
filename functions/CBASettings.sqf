@@ -1,6 +1,9 @@
 /*
-CBA Settings 1erRCC
-*/
+ *
+ * CBA Settings 1erRCC
+ * Called as Extended_PreInit_EventHandlers
+ *
+ */
 
 #define CBA_SETTINGS_RCC_MAIN "1erRCC Settings - Main"
 #define CBA_SETTINGS_RCC_MODCUSTOMEND "1erRCC Settings - Module CustomEnd"
