@@ -10,6 +10,8 @@
 
 if !(hasInterface) exitWith {};
 
+if !(RCC_grassremoval_enable) exitWith {};
+
 private _grass_action = [
 	"Grass_removal", 
 	"Remove foliage", 

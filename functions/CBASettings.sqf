@@ -10,16 +10,21 @@
 #define CBA_SETTINGS_RCC_MODVIDEOS "1erRCC Settings - Module Videos"
 
 
-// grass removal
+// Main
+[
+	"RCC_grassremoval_enable", 
+	"CHECKBOX", 
+	["Enable grass removal"], 
+	[CBA_SETTINGS_RCC_MAIN, "Self-Interactions"], 
+	true, 1, {}, true
+] call CBA_fnc_addSetting;
+
 [
 	"RCC_grassremoval_time", 
 	"SLIDER", 
-	["Time to remove grass","Set to time to cut grass for sniper position"], 
-	[CBA_SETTINGS_RCC_MAIN,"Self-Interactions"], 
-	[5, 30, 8, 0], 
-	1, 
-	{}, 
-	false
+	["Time to remove grass", "Set to time to cut grass for sniper position"], 
+	[CBA_SETTINGS_RCC_MAIN, "Self-Interactions"], 
+	[5, 30, 8, 0], 1, {}, false
 ] call CBA_fnc_addSetting;
 
 
